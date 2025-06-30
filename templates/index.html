@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paraphrase Tool</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="left-panel">
+            <h2>Upload Document</h2>
+            <div id="uploadContainer" class="upload-container">
+                <p>Click or drag a document here to upload</p>
+                <input type="file" id="fileInput" class="file-input" accept=".pdf,.doc,.docx,.txt" />
+            </div>
+            <h2>Original Text</h2>
+            <div id="documentViewer" class="document-viewer">
+                <p>Uploaded document content will appear here.</p>
+            </div>
+        </div>
+        <div class="right-panel">
+            <h2>Paraphrase Count</h2>
+            <p id="paraphraseCount">Upload a document to see paraphrase analysis.</p>
+
+            <h2>Paraphrase Options</h2>
+            <select id="toneSelect">
+                <option value="Professional">Professional</option>
+                <option value="Casual">Casual</option>
+                <option value="Academic">Academic</option>
+                </select>
+            <button id="generateParaphrases">Generate Paraphrases</button>
+            <div id="paraphraseResults">
+                 </div>
+                                
+        </div>
+    </div>
+
+    <div id="similarityModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h3>Similarity Details</h3>
+            <div id="similarityDetailsContent">
+                </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
